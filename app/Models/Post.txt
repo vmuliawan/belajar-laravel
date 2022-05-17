@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Models;
+
+
+class Post
+{
+    private static $content = [
+        [
+            "judul" => "Post Pertama",
+            "slug" => "post_pertama",
+            "author" => "Vincent Muliawan",
+            "konten" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda consectetur sunt officiis exercitationem quia eum, placeat amet consequuntur perspiciatis consequatur. Distinctio ea asperiores quod at aliquid molestias enim sapiente labore, ipsam eveniet tenetur deleniti obcaecati vero sequi aut fuga culpa accusamus quas quaerat laboriosam molestiae eos illo iusto quis! Numquam, quas. Commodi placeat eaque molestiae quod doloremque perferendis harum aliquid sed delectus voluptate incidunt laboriosam, sint architecto enim ea magni."
+        ],
+        [
+            "judul" => "Post Kedua",
+            "slug" => "post_kedua",
+            "author" => "Firzzy Wahyu Setiawan",
+            "konten" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda consectetur sunt officiis exercitationem quia eum, placeat amet consequuntur perspiciatis consequatur. Distinctio ea asperiores quod at aliquid molestias enim sapiente labore, ipsam eveniet tenetur deleniti obcaecati vero sequi aut fuga culpa accusamus quas quaerat laboriosam molestiae eos illo iusto quis! Numquam, quas. Commodi placeat eaque molestiae quod doloremque perferendis harum aliquid sed delectus voluptate incidunt laboriosam, sint architecto enim ea magni."
+        ]
+    ];
+
+    public static function all()
+    {
+        return collect(self::$content);
+    }
+
+    public static function find($slug)
+    {
+        $contents = static::all();
+        // $newpost = [];
+        // foreach ($contents as $post) {
+        //     if ($post["slug"] === $slug) {
+        //         $newpost = $post;
+        //     }
+        // }
+
+        return $contents->firstWhere('slug', $slug);
+    }
+}
