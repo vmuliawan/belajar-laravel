@@ -40,6 +40,6 @@ Route::get('/categories/{category:slug}', [CategoriesController::class, 'categor
 Route::get('/author/{author:username}', function (User $author) {
     return view('posts', [
         "title" => "User Post",
-        "content" => $author->post
+        "content" => $author->post->load('category', 'user')
     ]);
 });

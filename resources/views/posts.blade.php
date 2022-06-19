@@ -2,7 +2,7 @@
 
     @section('container')
 
-    <h1 class="display-5 mt-2">Hi this is my Blogspot:3</h1>
+    <h1 class="display-5 mt-2">{{ $title }}</h1>
     <br>
 
     <h3><a href="/category" style="text-decoration: none">Category</a></h3>
