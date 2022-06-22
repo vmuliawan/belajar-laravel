@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
             "slug" => "personal"
         ]);
 
-        Post::factory(15)->create();
+        Post::factory(10)->create();
 
         // Post::create([
         //     "judul" => "Post Pertama",
